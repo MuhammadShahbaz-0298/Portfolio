@@ -1,4 +1,4 @@
-// Site footer: logo mark, quick links, social icon buttons, copyright.
+// Site footer: script signature, quick links, social links, copyright.
 // Text comes from src/data/profile.js and src/data/navigation.js.
 import Container from '../ui/Container';
 import Icon from '../ui/Icon';
@@ -16,9 +16,6 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:justify-between">
           {/* Brand */}
           <div className="flex flex-col items-center gap-3 sm:items-start">
-            <span className="gradient-bg flex size-9 items-center justify-center rounded-lg text-sm font-extrabold text-on-accent">
-              MS
-            </span>
             <div className="text-center sm:text-left">
               <p className="text-sm font-bold text-ink">
                 <ScriptName />
