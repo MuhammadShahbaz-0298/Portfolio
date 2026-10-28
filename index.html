@@ -29,9 +29,18 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- Speed: start the hero image download immediately (it only exists
-         after React renders, so without this the browser finds it late),
-         and open a connection to the GitHub API early for the stats card. -->
-  <link rel="preload" as="image" href="/images/muhammad-shahbaz.webp" fetchpriority="high" />
+         after React renders, so without this the browser finds it late).
+         imagesrcset/imagesizes must match the hero <img> in Hero.jsx so
+         phones preload the small variant instead of the big one.
+         Also open a connection to the GitHub API early for the stats card. -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/muhammad-shahbaz.webp"
+    imagesrcset="/images/muhammad-shahbaz-360.webp 360w, /images/muhammad-shahbaz.webp 480w"
+    imagesizes="(min-width: 640px) 192px, 160px"
+    fetchpriority="high"
+  />
   <link rel="preconnect" href="https://api.github.com" crossorigin />
 
   <!-- Open Graph (shared links: LinkedIn, WhatsApp, etc.) -->

@@ -168,9 +168,11 @@ VITE_SITE_DESCRIPTION=Frontend developer in Karachi building fast, clean React a
 ### Replace a project screenshot
 
 1. Drop the new screenshot (any size) into `public/projects/`.
-2. Run `npm run optimize-images` — it resizes every screenshot to exactly
-   what the page displays and saves it as WebP (much smaller than JPG at the
-   same quality). Bigger files than the screen shows only slow the site down.
+2. Run `npm run optimize-images` — it saves every screenshot as WebP at the
+   exact widths the page requests (400/720/1120 px, declared in the
+   `srcSetWidths` prop where the image is used). Phones download the small
+   variant, retina screens the sharp one. Bigger files than the screen
+   shows only slow the site down.
 3. Point `image:` in `src/data/projects.js` at the file it produced (`.webp`).
 
 ### Change the font
@@ -252,7 +254,7 @@ transparent pixels with black). To swap it:
 
 ## Good to know
 
-- **Performance (mobile Lighthouse ~87, was ~85):** one variable font file instead of five weight files, the hero image preloaded (it only exists after React renders), below-the-fold sections lazy-loaded in `App.jsx` (`React.lazy` — smaller first paint), WebP images sized to their display via `npm run optimize-images`, and an early connection to the GitHub API. The two remaining Lighthouse flags are React's own internals and an image advisory — nothing actionable left.
+- **Performance (mobile Lighthouse ~90, was ~85):** one variable font file instead of five weight files, the hero image preloaded (it only exists after React renders), below-the-fold sections lazy-loaded in `App.jsx` (`React.lazy` — smaller first paint), responsive images via `srcset` (phones download 360-720 px variants instead of 1120 px — see `npm run optimize-images`), and an early connection to the GitHub API. The remaining Lighthouse flags are React's own internals, the one external stylesheet and the client-render chain — inherent to a client-rendered React app.
 
 - **Power features:** gradient reading-progress bar at the top (`ScrollProgress`), scroll-spy nav that highlights the section you're reading (`useActiveSection` in `Navbar`), a back-to-top button (`BackToTop`), one-click copy-email with "Copied!" feedback (`Contact`), and **live GitHub stats** in About — real repos/stars/followers from the free GitHub API, driven by `githubUsername` in `src/data/profile.js`. Set `githubUsername: ''` to hide that card; it also hides itself automatically if the API is unreachable (no made-up numbers, ever).
 - **Animations (no libraries, all CSS/JS):** every card grid is equal-height (cards stretch to the row and buttons share a baseline). `<Reveal variant="left|right|scale|blur">` picks how a block enters on scroll, with `delay` for staggering; stats count up to their real value (`useCountUp`); the hero headline shimmers (`gradient-pan`), the avatar floats (`float-soft`), buttons press (`active:scale-95`), skill chips pop on hover. Everything is disabled for `prefers-reduced-motion`.

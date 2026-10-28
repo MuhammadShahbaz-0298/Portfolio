@@ -39,8 +39,10 @@ export default function Hero() {
                     src={profile.photo}
                     alt={profile.photoAlt}
                     width={480}
-                    height={480}
+                    height={600}
                     priority
+                    srcSetWidths={[360]}
+                    sizes="(min-width: 640px) 192px, 160px"
                     fallbackLabel="Photo coming soon"
                     className="size-40 rounded-full object-cover sm:size-48"
                   />

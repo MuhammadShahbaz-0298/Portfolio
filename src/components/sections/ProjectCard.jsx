@@ -45,8 +45,10 @@ export default function ProjectCard({ project, index }) {
               <SmartImage
                 src={image}
                 alt={`${title} repository screenshot`}
-                width={400}
-                height={250}
+                width={1120}
+                height={700}
+                srcSetWidths={[400, 720]}
+                sizes="(min-width: 640px) 192px, calc(100vw - 5rem)"
                 fallbackLabel={title}
                 className="aspect-[16/10] w-full rounded-lg object-cover"
               />
@@ -71,8 +73,10 @@ export default function ProjectCard({ project, index }) {
         <SmartImage
           src={image}
           alt={`${title} app screenshot`}
-          width={800}
-          height={500}
+          width={1120}
+          height={700}
+          srcSetWidths={[400, 720]}
+          sizes="(min-width: 1024px) 500px, calc(100vw - 5rem)"
           fallbackLabel={`${title} screenshot`}
           className="aspect-[16/10] w-full rounded-xl object-cover"
         />
