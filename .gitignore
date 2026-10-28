@@ -7,6 +7,7 @@ dist/
 # Local env overrides (the committed .env holds the real site settings)
 .env.local
 .env.*.local
+.env
 
 # Logs
 *.log
