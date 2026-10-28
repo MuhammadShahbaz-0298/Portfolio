@@ -7,71 +7,67 @@
   first paint so there is no white flash on dark mode.
 -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>%VITE_SITE_TITLE%</title>
-    <meta name="description" content="%VITE_SITE_DESCRIPTION%" />
-    <link rel="canonical" href="%VITE_SITE_URL%" />
-    <meta name="author" content="Muhammad Shahbaz" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="CP-NURUmFti7udgPkqCi1I-mZ1RldgM1Wpirb2VLJuU" />
+  <title>%VITE_SITE_TITLE%</title>
+  <meta name="description" content="%VITE_SITE_DESCRIPTION%" />
+  <link rel="canonical" href="%VITE_SITE_URL%" />
+  <meta name="author" content="Muhammad Shahbaz" />
 
-    <!-- Theme color for browser chrome, per color scheme -->
-    <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#05050a" media="(prefers-color-scheme: dark)" />
+  <!-- Theme color for browser chrome, per color scheme -->
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#05050a" media="(prefers-color-scheme: dark)" />
 
-    <!-- Favicon: the handwritten "Shahbaz" logo art on a white circle
+  <!-- Favicon: the handwritten "Shahbaz" logo art on a white circle
          (public/favicon.png — transparent corners make it round in the tab).
          iOS home-screen icon uses the square variant (iOS fills
          transparent areas with black). -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Speed: start the hero image download immediately (it only exists
+  <!-- Speed: start the hero image download immediately (it only exists
          after React renders, so without this the browser finds it late),
          and open a connection to the GitHub API early for the stats card. -->
-    <link
-      rel="preload"
-      as="image"
-      href="/images/muhammad-shahbaz.webp"
-      fetchpriority="high"
-    />
-    <link rel="preconnect" href="https://api.github.com" crossorigin />
+  <link rel="preload" as="image" href="/images/muhammad-shahbaz.webp" fetchpriority="high" />
+  <link rel="preconnect" href="https://api.github.com" crossorigin />
 
-    <!-- Open Graph (shared links: LinkedIn, WhatsApp, etc.) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="%VITE_SITE_URL%" />
-    <meta property="og:title" content="%VITE_SITE_TITLE%" />
-    <meta property="og:description" content="%VITE_SITE_DESCRIPTION%" />
-    <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Muhammad Shahbaz" />
+  <!-- Open Graph (shared links: LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="%VITE_SITE_URL%" />
+  <meta property="og:title" content="%VITE_SITE_TITLE%" />
+  <meta property="og:description" content="%VITE_SITE_DESCRIPTION%" />
+  <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Muhammad Shahbaz" />
 
-    <!-- Twitter card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="%VITE_SITE_TITLE%" />
-    <meta name="twitter:description" content="%VITE_SITE_DESCRIPTION%" />
-    <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.png" />
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="%VITE_SITE_TITLE%" />
+  <meta name="twitter:description" content="%VITE_SITE_DESCRIPTION%" />
+  <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.png" />
 
-    <!-- Apply saved theme before first paint (keeps values in sync with src/styles/index.css) -->
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          var theme = saved === 'light' || saved === 'dark' ? saved : prefersDark ? 'dark' : 'light';
-          document.documentElement.classList.toggle('dark', theme === 'dark');
-          document.documentElement.style.colorScheme = theme;
-        } catch (error) {
-          /* storage blocked: fall back to light */
-        }
-      })();
-    </script>
+  <!-- Apply saved theme before first paint (keeps values in sync with src/styles/index.css) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved === 'light' || saved === 'dark' ? saved : prefersDark ? 'dark' : 'light';
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.documentElement.style.colorScheme = theme;
+      } catch (error) {
+        /* storage blocked: fall back to light */
+      }
+    })();
+  </script>
 
-    <!-- Structured data (Google reads this Person schema) -->
-    <script type="application/ld+json">
+  <!-- Structured data (Google reads this Person schema) -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -89,32 +85,34 @@
         ]
       }
     </script>
-  </head>
-  <body>
-    <!-- React mounts here. The text below is the no-JS / pre-hydration fallback
+</head>
+
+<body>
+  <!-- React mounts here. The text below is the no-JS / pre-hydration fallback
          so crawlers and users without JavaScript still see name, role, location. -->
-    <div id="root">
-      <div style="padding: 2.5rem 1.5rem; font-family: system-ui, sans-serif; line-height: 1.6;">
-        <h1 style="font-size: 1.5rem; margin: 0;">Muhammad Shahbaz</h1>
-        <p style="margin: 0.25rem 0 0;">Frontend Developer — Karachi, Pakistan</p>
-        <p style="margin: 0.5rem 0 0;">
-          I build fast, clean React and React Native apps.
-          Email:
-          <a href="mailto:muhammadshahbazali001@gmail.com">muhammadshahbazali001@gmail.com</a>
-        </p>
-      </div>
+  <div id="root">
+    <div style="padding: 2.5rem 1.5rem; font-family: system-ui, sans-serif; line-height: 1.6;">
+      <h1 style="font-size: 1.5rem; margin: 0;">Muhammad Shahbaz</h1>
+      <p style="margin: 0.25rem 0 0;">Frontend Developer — Karachi, Pakistan</p>
+      <p style="margin: 0.5rem 0 0;">
+        I build fast, clean React and React Native apps.
+        Email:
+        <a href="mailto:muhammadshahbazali001@gmail.com">muhammadshahbazali001@gmail.com</a>
+      </p>
     </div>
+  </div>
 
-    <noscript>
-      <div style="padding: 1.5rem; font-family: system-ui, sans-serif; border-top: 1px solid #e2e8f0;">
-        This portfolio is built with React and needs JavaScript enabled to show the full page.
-        You can still reach Muhammad Shahbaz at
-        <a href="mailto:muhammadshahbazali001@gmail.com">muhammadshahbazali001@gmail.com</a>,
-        on <a href="https://linkedin.com/in/muhammad-shahbaz-00614a338">LinkedIn</a> or
-        <a href="https://github.com/MuhammadShahbaz-0298">GitHub</a>.
-      </div>
-    </noscript>
+  <noscript>
+    <div style="padding: 1.5rem; font-family: system-ui, sans-serif; border-top: 1px solid #e2e8f0;">
+      This portfolio is built with React and needs JavaScript enabled to show the full page.
+      You can still reach Muhammad Shahbaz at
+      <a href="mailto:muhammadshahbazali001@gmail.com">muhammadshahbazali001@gmail.com</a>,
+      on <a href="https://linkedin.com/in/muhammad-shahbaz-00614a338">LinkedIn</a> or
+      <a href="https://github.com/MuhammadShahbaz-0298">GitHub</a>.
+    </div>
+  </noscript>
 
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
