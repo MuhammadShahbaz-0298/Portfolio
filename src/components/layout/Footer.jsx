@@ -17,10 +17,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col items-center gap-3 sm:items-start">
             <div className="text-center sm:text-left">
-              <p className="text-sm font-bold text-ink">
-                <ScriptName />
+              <p className="text-ink">
+                <ScriptName size="lg" />
               </p>
-              <p className="mt-1 text-sm text-muted">
+              <p className="mt-2 text-base text-muted">
                 {profile.role} — {profile.location}
               </p>
             </div>
@@ -29,13 +29,13 @@ export default function Footer() {
           {/* Quick links + socials */}
           <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:gap-14">
             <nav aria-label="Footer navigation">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted">Pages</p>
+              <p className="text-sm font-semibold uppercase tracking-widest text-muted">Pages</p>
               <ul className="mt-3 space-y-2">
                 {navigationLinks.map((link) => (
                   <li key={link.id}>
                     <a
                       href={link.href}
-                      className="text-sm text-muted transition-colors hover:text-accent"
+                      className="text-base text-muted transition-colors hover:text-accent"
                     >
                       {link.label}
                     </a>
@@ -45,7 +45,7 @@ export default function Footer() {
             </nav>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted">Elsewhere</p>
+              <p className="text-sm font-semibold uppercase tracking-widest text-muted">Elsewhere</p>
               <ul className="mt-3 space-y-2">
                 {socialLinks.map((link) => (
                   <li key={link.id}>
@@ -53,9 +53,9 @@ export default function Footer() {
                       href={link.href}
                       target={link.href.startsWith('http') ? '_blank' : undefined}
                       rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                      className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
+                      className="inline-flex items-center gap-2 text-base text-muted transition-colors hover:text-accent"
                     >
-                      <Icon name={link.icon} className="size-4" />
+                      <Icon name={link.icon} className="size-5" />
                       {link.label}
                     </a>
                   </li>

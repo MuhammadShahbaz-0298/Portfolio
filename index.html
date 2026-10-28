@@ -27,6 +27,17 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+    <!-- Speed: start the hero image download immediately (it only exists
+         after React renders, so without this the browser finds it late),
+         and open a connection to the GitHub API early for the stats card. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/muhammad-shahbaz.webp"
+      fetchpriority="high"
+    />
+    <link rel="preconnect" href="https://api.github.com" crossorigin />
+
     <!-- Open Graph (shared links: LinkedIn, WhatsApp, etc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="%VITE_SITE_URL%" />

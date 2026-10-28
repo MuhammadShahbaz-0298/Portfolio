@@ -9,7 +9,7 @@ export const projectList = [
     summary:
       'Full-stack budgeting app with role-based access, monthly budgets with alerts, and income-vs-expense reports.',
     stack: ['React', 'Node.js', 'Express', 'MongoDB'],
-    image: '/projects/campus-coin.jpg',
+    image: '/projects/campus-coin.webp',
     liveUrl: 'https://campuscoin-97dc7.containers.snapdeploy.app',
     githubUrl: 'https://github.com/MuhammadShahbaz-0298/campuscoin-frontend',
     featured: true,
@@ -20,7 +20,7 @@ export const projectList = [
     summary:
       'Portal with role permissions, file uploads, assignment grading and per-role dashboards.',
     stack: ['React', 'Redux', 'Node.js', 'MongoDB'],
-    image: '/projects/school-portal.jpg',
+    image: '/projects/school-portal.webp',
     liveUrl: 'https://portal-schools.up.railway.app',
     githubUrl: 'https://github.com/MuhammadShahbaz-0298/PORTAL-frontend',
     featured: true,
@@ -31,7 +31,7 @@ export const projectList = [
     summary:
       'Flutter bookstore app with cart, checkout, wishlist and admin roles on Firebase.',
     stack: ['Flutter', 'Dart', 'Firebase'],
-    image: '/projects/bookstore.jpg',
+    image: '/projects/bookstore.webp',
     liveUrl: null,
     githubUrl: 'https://github.com/MuhammadShahbaz-0298/Book_Store_Flutter',
     featured: false,

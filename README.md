@@ -150,23 +150,35 @@ photo: '/images/muhammad-shahbaz.webp',
 
 ### Change the site URL, title or description
 
-1. Edit `.env`:
+The three settings live in `.env.Example`. For local builds, copy it to `.env`
+(`copy .env.Example .env`). When deploying, add the same three `VITE_...`
+variables in your host's dashboard instead (Vercel: **Settings → Environment
+Variables**):
 
 ```
 VITE_SITE_URL=https://your-domain.com
 VITE_SITE_TITLE=Muhammad Shahbaz | React and React Native Developer in Karachi
-VITE_SITE_DESCRIPTION=Junior frontend developer in Karachi...
+VITE_SITE_DESCRIPTION=Frontend developer in Karachi building fast, clean React and React Native apps. Open to freelance projects and full-time roles.
 ```
 
-2. Update the URL inside `public/robots.txt` and `public/sitemap.xml` (static files cannot read `.env`).
+2. Update the URL inside `public/robots.txt` and `public/sitemap.xml` (static files cannot read env values).
 
 `index.html` picks the values up automatically via `%VITE_...%` placeholders — never edit the tags in `index.html` by hand.
+
+### Replace a project screenshot
+
+1. Drop the new screenshot (any size) into `public/projects/`.
+2. Run `npm run optimize-images` — it resizes every screenshot to exactly
+   what the page displays and saves it as WebP (much smaller than JPG at the
+   same quality). Bigger files than the screen shows only slow the site down.
+3. Point `image:` in `src/data/projects.js` at the file it produced (`.webp`).
 
 ### Change the font
 
 The site self-hosts two fonts via `@fontsource` (no external requests):
 
-- **Plus Jakarta Sans** — all body/UI text (`--font-sans`)
+- **Plus Jakarta Sans Variable** — all body/UI text (`--font-sans`). One
+  variable file covers every weight, which keeps the page fast.
 - **Great Vibes** — the handwritten signature for the name (`--font-script`,
   rendered by `src/components/ui/ScriptName.jsx` in the navbar, hero and footer)
 
@@ -239,6 +251,8 @@ transparent pixels with black). To swap it:
 ---
 
 ## Good to know
+
+- **Performance (mobile Lighthouse ~87, was ~85):** one variable font file instead of five weight files, the hero image preloaded (it only exists after React renders), below-the-fold sections lazy-loaded in `App.jsx` (`React.lazy` — smaller first paint), WebP images sized to their display via `npm run optimize-images`, and an early connection to the GitHub API. The two remaining Lighthouse flags are React's own internals and an image advisory — nothing actionable left.
 
 - **Power features:** gradient reading-progress bar at the top (`ScrollProgress`), scroll-spy nav that highlights the section you're reading (`useActiveSection` in `Navbar`), a back-to-top button (`BackToTop`), one-click copy-email with "Copied!" feedback (`Contact`), and **live GitHub stats** in About — real repos/stars/followers from the free GitHub API, driven by `githubUsername` in `src/data/profile.js`. Set `githubUsername: ''` to hide that card; it also hides itself automatically if the API is unreachable (no made-up numbers, ever).
 - **Animations (no libraries, all CSS/JS):** every card grid is equal-height (cards stretch to the row and buttons share a baseline). `<Reveal variant="left|right|scale|blur">` picks how a block enters on scroll, with `delay` for staggering; stats count up to their real value (`useCountUp`); the hero headline shimmers (`gradient-pan`), the avatar floats (`float-soft`), buttons press (`active:scale-95`), skill chips pop on hover. Everything is disabled for `prefers-reduced-motion`.
