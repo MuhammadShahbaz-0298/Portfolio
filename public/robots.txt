@@ -1,0 +1,6 @@
+# Allow every crawler.
+User-agent: *
+Allow: /
+
+# Where Google finds the sitemap. Update the URL if the site URL changes.
+Sitemap: https://muhammad-shahbaz.vercel.app/sitemap.xml

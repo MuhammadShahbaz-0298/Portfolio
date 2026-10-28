@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local env overrides (the committed .env holds the real site settings)
+.env.local
+.env.*.local
+
+# Logs
+*.log
