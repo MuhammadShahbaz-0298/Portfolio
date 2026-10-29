@@ -21,7 +21,7 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed inset-x-0 top-4 z-50 px-4">
+    <header className="fixed inset-x-0 top-[calc(env(safe-area-inset-top)+1.5rem)] z-50 px-4 md:top-4">
       {/* The pill */}
       <div className="glass-card mx-auto flex w-full max-w-3xl items-center justify-between rounded-full py-2 pl-5 pr-2">
         {/* Brand: the handwritten signature (no image, no monogram) */}
