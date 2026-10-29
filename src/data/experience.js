@@ -15,7 +15,7 @@ export const experienceList = [
     highlights: [
       "Cut a page's load time from about 4s to 1.5s by merging multiple API calls into one request.",
       'Fixed an infinite-loading bug in a React Native app and built an offline-safe flow that saves call logs when the network drops.',
-      'Redesigned the full frontend of a Laravel-based CRM and rebuilt the UI of a React Native app.',
+      'Redesigned the full frontend of a Laravel-based CRM and rebuilt the UI of React Native apps.',
     ],
   },
   {
