@@ -1,6 +1,3 @@
-// Projects (Work): featured projects in a 2-column glass-card grid, the
-// compact one below. To add a project, copy one object in
-// src/data/projects.js — nothing here needs to change.
 import Button from '../ui/Button';
 import Reveal from '../ui/Reveal';
 import Section from '../ui/Section';
@@ -23,7 +20,6 @@ export default function Projects() {
         />
       </Reveal>
 
-      {/* Featured: 2-column grid (equal heights, staggered scale-in) */}
       <div className="mt-14 grid gap-8 lg:grid-cols-2">
         {featuredProjects.map((project, index) => (
           <Reveal key={project.id} delay={index * 80} variant="scale">
@@ -32,7 +28,6 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Compact entries */}
       <div className="mt-8 space-y-8">
         {compactProjects.map((project, index) => (
           <Reveal key={project.id} delay={index * 80} variant="scale">

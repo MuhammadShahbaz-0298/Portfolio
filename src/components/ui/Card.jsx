@@ -1,7 +1,3 @@
-// Card: the one frosted-glass surface (blur, hairline border, soft shadow).
-// padding="md" (default), "lg" for big panels, "none" when the caller lays
-// out its own padding (e.g. image frames).
-// hover={true} adds the popular lift + glow effect (use on clickable cards).
 const paddingClasses = {
   none: '',
   md: 'p-6',

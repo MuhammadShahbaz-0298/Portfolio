@@ -1,5 +1,3 @@
-// SectionHeading: glass pill label + big centered title + optional description
-// — the standard look of modern landing pages.
 export default function SectionHeading({ eyebrow, title, description, align = 'center' }) {
   const alignment = align === 'center' ? 'mx-auto text-center' : 'text-left';
 

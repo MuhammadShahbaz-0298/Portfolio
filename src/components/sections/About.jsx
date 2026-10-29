@@ -1,5 +1,3 @@
-// About: intro text on the left, quick facts as glass cards on the right.
-// Everything comes from src/data/profile.js.
 import Button from '../ui/Button';
 import Card from '../ui/Card';
 import GitHubStats from '../ui/GitHubStats';
@@ -21,9 +19,7 @@ export default function About() {
         <SectionHeading eyebrow="About me" title="Who I am" description={profile.about} />
       </Reveal>
 
-      {/* Two equal-height columns: stretch fills any gap, facts spread to match */}
       <div className="mt-14 grid gap-8 lg:grid-cols-2">
-        {/* Quick facts */}
         <Reveal delay={100} variant="left">
           <div className="flex h-full flex-col justify-between gap-4">
             {facts.map((fact) => (
@@ -40,7 +36,6 @@ export default function About() {
           </div>
         </Reveal>
 
-        {/* Socials card */}
         <Reveal delay={180} variant="right">
           <Card hover className="h-full">
             <p className="text-xs font-semibold uppercase tracking-widest text-muted">
@@ -64,7 +59,6 @@ export default function About() {
         </Reveal>
       </div>
 
-      {/* Live GitHub stats — full width so both columns end level */}
       <div className="mt-8">
         <GitHubStats username={profile.githubUsername} profileUrl={profile.github} />
       </div>

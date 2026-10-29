@@ -1,7 +1,3 @@
-// ScriptName: Muhammad's name in the handwritten signature style
-// (Great Vibes — matches the logo artwork). The text itself lives in
-// src/data/profile.js like everywhere else; only the styling is here.
-// size: 'xs' (footer copyright) | 'sm' (navbar, footer brand) | 'lg' (hero greeting).
 import { profile } from '../../data/profile';
 
 const sizeClasses = {

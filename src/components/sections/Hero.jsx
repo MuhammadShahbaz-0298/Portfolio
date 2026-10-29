@@ -1,6 +1,3 @@
-// Hero: centered layout — status pill, avatar with a gradient glow ring,
-// gradient headline, subline, CTA buttons and social icon links.
-// Content comes from src/data/profile.js.
 import Button from '../ui/Button';
 import Container from '../ui/Container';
 import Icon from '../ui/Icon';
@@ -15,7 +12,6 @@ export default function Hero() {
     <section id="top" className="pb-24 pt-36 sm:pt-44">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          {/* Status pill */}
           <Reveal>
             <span className="label glass-card inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-muted">
               <span className="relative flex size-2" aria-hidden="true">
@@ -26,7 +22,6 @@ export default function Hero() {
             </span>
           </Reveal>
 
-          {/* Avatar with gradient ring + glow (floats gently, blurs in) */}
           <Reveal delay={80} variant="blur">
             <div className="float-soft relative mt-10">
               <div
@@ -51,26 +46,22 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          {/* Name + role */}
           <Reveal delay={140}>
             <p className="mt-8 text-lg font-semibold text-muted">
               Hi, I'm <ScriptName size="lg" className="text-ink" />
             </p>
           </Reveal>
 
-          {/* Gradient headline */}
           <Reveal delay={200}>
             <h1 className="gradient-text gradient-pan mt-3 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
               {profile.headline}
             </h1>
           </Reveal>
 
-          {/* Subline */}
           <Reveal delay={260}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{profile.subline}</p>
           </Reveal>
 
-          {/* CTAs */}
           <Reveal delay={320}>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <Button href="#projects" size="lg" icon="arrowRight">
@@ -91,7 +82,6 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          {/* Socials */}
           <Reveal delay={380}>
             <ul className="mt-10 flex items-center gap-3" aria-label="Social links">
               {socialLinks.map((link) => (
@@ -110,7 +100,6 @@ export default function Hero() {
             </ul>
           </Reveal>
 
-          {/* Location */}
           <Reveal delay={440}>
             <p className="label mt-10 flex items-center gap-2 text-muted">
               <Icon name="mapPin" className="size-3.5 text-accent" />

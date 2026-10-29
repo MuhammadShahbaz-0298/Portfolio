@@ -1,7 +1,3 @@
-// Projects shown in the Work section. To add a project, copy one object.
-// - featured: true  -> large numbered entry with a screenshot (alternating sides)
-// - featured: false -> compact row with a small thumbnail
-// - image: screenshot in public/projects/ (or null)
 export const projectList = [
   {
     id: 'campus-coin',

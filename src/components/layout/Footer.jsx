@@ -1,5 +1,3 @@
-// Site footer: script signature, quick links, social links, copyright.
-// Text comes from src/data/profile.js and src/data/navigation.js.
 import Container from '../ui/Container';
 import Icon from '../ui/Icon';
 import ScriptName from '../ui/ScriptName';
@@ -14,7 +12,6 @@ export default function Footer() {
     <footer className="border-t border-line py-12">
       <Container>
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:justify-between">
-          {/* Brand */}
           <div className="flex flex-col items-center gap-3 sm:items-start">
             <div className="text-center sm:text-left">
               <p className="text-ink">
@@ -26,7 +23,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links + socials */}
           <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:gap-14">
             <nav aria-label="Footer navigation">
               <p className="text-sm font-semibold uppercase tracking-widest text-muted">Pages</p>

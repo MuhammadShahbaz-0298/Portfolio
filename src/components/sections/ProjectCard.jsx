@@ -1,6 +1,3 @@
-// ProjectCard: one project from src/data/projects.js.
-// featured: true  -> glass card with the screenshot on top (2-column grid)
-// featured: false -> compact glass card with a small thumbnail
 import Badge from '../ui/Badge';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
@@ -21,7 +18,6 @@ export default function ProjectCard({ project, index }) {
   );
 
   const links = (
-    // mt-auto: in flex cards the buttons sit on a shared bottom line
     <div className="mt-auto flex flex-wrap gap-3 pt-6">
       {liveUrl && (
         <Button href={liveUrl} icon="arrowUpRight">
@@ -68,7 +64,6 @@ export default function ProjectCard({ project, index }) {
 
   return (
     <Card hover padding="none" className="flex h-full flex-col overflow-hidden">
-      {/* Screenshot */}
       <div className="border-b border-line bg-page/50 p-1.5">
         <SmartImage
           src={image}
@@ -82,7 +77,6 @@ export default function ProjectCard({ project, index }) {
         />
       </div>
 
-      {/* Details grow so both cards end level and buttons share a baseline */}
       <div className="flex flex-1 flex-col p-6 sm:p-8">
         <div className="flex items-center justify-between gap-4">
           <h3 className="text-xl font-bold tracking-tight text-ink">{title}</h3>

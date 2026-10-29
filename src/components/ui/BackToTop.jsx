@@ -1,5 +1,3 @@
-// BackToTop: floating glass button that fades in after you scroll down and
-// smooth-scrolls back to the top. Show/hide classes live in styles/index.css.
 import Icon from './Icon';
 import { useScrolledPast } from '../../hooks/useScrolledPast';
 
@@ -19,7 +17,6 @@ export default function BackToTop() {
         isVisible ? 'is-visible' : ''
       }`}
       aria-label="Back to top"
-      // Hidden from tab order until it appears on screen.
       tabIndex={isVisible ? 0 : -1}
       aria-hidden={!isVisible}
     >

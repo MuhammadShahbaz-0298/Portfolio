@@ -1,5 +1,3 @@
-// useScrolledPast: true once the page is scrolled past `threshold` px.
-// Used to show the back-to-top button. rAF-throttled + passive listener.
 import { useEffect, useState } from 'react';
 
 export function useScrolledPast(threshold) {

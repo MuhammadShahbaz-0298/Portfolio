@@ -1,7 +1,3 @@
-// usePageMetadata: copies the values from src/data/site.js (which read them
-// from .env) into the <title> and meta tags when the app starts.
-// index.html already has the same values via %VITE_...% placeholders; this
-// hook keeps everything consistent even if the env file changes later.
 import { useEffect } from 'react';
 import { site } from '../data/site';
 

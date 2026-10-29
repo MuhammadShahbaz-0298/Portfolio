@@ -1,12 +1,3 @@
-// SmartImage: the safe <img> wrapper used for the photo and screenshots.
-// - Below-the-fold images load lazily; pass priority for the hero photo.
-// - Responsive sizes: pass srcSetWidths (variants produced by
-//   `npm run optimize-images`, named file-<width>.ext) plus a `sizes`
-//   string describing how wide the image displays. The browser then
-//   downloads only the variant it needs — phones get the small file,
-//   retina screens get the sharp one.
-// - If the file is missing (before you add your real photo/screenshots),
-//   it shows a neutral placeholder instead of a broken image icon.
 import { useState } from 'react';
 import Icon from './Icon';
 
@@ -38,8 +29,6 @@ export default function SmartImage({
     );
   }
 
-  // width/height props must be the real file dimensions — they are
-  // declared as the largest srcset candidate (the base src itself).
   const srcSet =
     srcSetWidths.length > 0
       ? [

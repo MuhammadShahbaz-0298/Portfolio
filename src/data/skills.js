@@ -1,5 +1,3 @@
-// Skills shown as badges in the Skills section.
-// To add a skill, copy one line.
 export const skillList = [
   { id: 'react', name: 'React' },
   { id: 'react-native', name: 'React Native' },

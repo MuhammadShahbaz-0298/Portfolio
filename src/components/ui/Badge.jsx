@@ -1,5 +1,3 @@
-// Badge: glass pill for tech stack and short labels.
-// variant: 'glass' (default) | 'accent' (gradient-tinted)
 export default function Badge({ children, variant = 'glass', className = '' }) {
   const variantClasses =
     variant === 'accent'

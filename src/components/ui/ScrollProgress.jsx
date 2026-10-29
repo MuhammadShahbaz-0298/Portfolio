@@ -1,6 +1,3 @@
-// ScrollProgress: thin gradient reading-progress bar fixed to the top of
-// the window (shows how far through the portfolio you are). Width follows
-// the scroll position from useScrollProgress — no animation libraries.
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 
 export default function ScrollProgress() {

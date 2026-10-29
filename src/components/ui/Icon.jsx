@@ -1,8 +1,3 @@
-// Icon: every icon on the site is an inline SVG looked up by name here.
-// Usage: <Icon name="github" className="size-5" />
-// To add an icon, copy one entry in iconPaths and use it by its name.
-// Brand icons (github, linkedin) are filled; the rest are line icons.
-
 const iconPaths = {
   sun: (
     <>

@@ -1,6 +1,3 @@
-// useScrollProgress: returns a number 0 → 1 for how far the page has been
-// scrolled. Drives the gradient reading-progress bar. Listens passively and
-// skips redundant updates so scrolling stays smooth (no animation libraries).
 import { useEffect, useState } from 'react';
 
 const readProgress = () => {

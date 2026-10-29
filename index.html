@@ -1,11 +1,4 @@
 <!doctype html>
-<!--
-  SEO shell for the whole site.
-  Title / description / URL come from .env (VITE_SITE_URL, VITE_SITE_TITLE,
-  VITE_SITE_DESCRIPTION) so they are never duplicated by hand.
-  The tiny inline script below applies the saved light/dark theme BEFORE
-  first paint so there is no white flash on dark mode.
--->
 <html lang="en">
 
 <head>
@@ -17,22 +10,12 @@
   <link rel="canonical" href="%VITE_SITE_URL%" />
   <meta name="author" content="Muhammad Shahbaz" />
 
-  <!-- Theme color for browser chrome, per color scheme -->
   <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#05050a" media="(prefers-color-scheme: dark)" />
 
-  <!-- Favicon: the handwritten "Shahbaz" logo art on a white circle
-         (public/favicon.png — transparent corners make it round in the tab).
-         iOS home-screen icon uses the square variant (iOS fills
-         transparent areas with black). -->
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Speed: start the hero image download immediately (it only exists
-         after React renders, so without this the browser finds it late).
-         imagesrcset/imagesizes must match the hero <img> in Hero.jsx so
-         phones preload the small variant instead of the big one.
-         Also open a connection to the GitHub API early for the stats card. -->
   <link
     rel="preload"
     as="image"
@@ -43,7 +26,6 @@
   />
   <link rel="preconnect" href="https://api.github.com" crossorigin />
 
-  <!-- Open Graph (shared links: LinkedIn, WhatsApp, etc.) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="%VITE_SITE_URL%" />
   <meta property="og:title" content="%VITE_SITE_TITLE%" />
@@ -54,13 +36,11 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Muhammad Shahbaz" />
 
-  <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="%VITE_SITE_TITLE%" />
   <meta name="twitter:description" content="%VITE_SITE_DESCRIPTION%" />
   <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.png" />
 
-  <!-- Apply saved theme before first paint (keeps values in sync with src/styles/index.css) -->
   <script>
     (function () {
       try {
@@ -70,12 +50,10 @@
         document.documentElement.classList.toggle('dark', theme === 'dark');
         document.documentElement.style.colorScheme = theme;
       } catch (error) {
-        /* storage blocked: fall back to light */
       }
     })();
   </script>
 
-  <!-- Structured data (Google reads this Person schema) -->
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -97,8 +75,6 @@
 </head>
 
 <body>
-  <!-- React mounts here. The text below is the no-JS / pre-hydration fallback
-         so crawlers and users without JavaScript still see name, role, location. -->
   <div id="root">
     <div style="padding: 2.5rem 1.5rem; font-family: system-ui, sans-serif; line-height: 1.6;">
       <h1 style="font-size: 1.5rem; margin: 0;">Muhammad Shahbaz</h1>

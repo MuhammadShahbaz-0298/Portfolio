@@ -1,4 +1,3 @@
-// ThemeToggle: sun/moon button in the navbar. State lives in useTheme.
 import { useTheme } from '../../hooks/useTheme';
 import Icon from './Icon';
 

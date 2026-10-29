@@ -1,7 +1,3 @@
-// Contact: big glass panel with the classic "Let's build something." call,
-// the email as the primary gradient CTA plus a one-click "copy email"
-// button (with "Copied!" feedback), and LinkedIn/GitHub buttons.
-// No form and no backend — email is the fastest channel.
 import { useState } from 'react';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
@@ -16,7 +12,6 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
-    // Modern clipboard API first; fallback keeps it working in older browsers.
     let copiedOk = false;
     try {
       await navigator.clipboard.writeText(profile.email);
@@ -42,7 +37,6 @@ export default function Contact() {
     <Section id="contact" background="surface">
       <Reveal>
         <Card padding="lg" className="relative mx-auto max-w-3xl overflow-hidden text-center">
-          {/* Soft glow inside the panel */}
           <div
             className="absolute -top-24 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-accent-soft blur-3xl"
             aria-hidden="true"
@@ -72,7 +66,6 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Direct email + one-click copy */}
             <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
               <a
                 href={`mailto:${profile.email}`}

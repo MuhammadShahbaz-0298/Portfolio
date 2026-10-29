@@ -1,5 +1,3 @@
-// Navbar and footer links. To add a link, copy one object.
-// The href must match the id of a section in App.jsx.
 export const navigationLinks = [
   { id: 'about', label: 'About', href: '#about' },
   { id: 'projects', label: 'Work', href: '#projects' },

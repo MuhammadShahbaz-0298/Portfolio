@@ -1,23 +1,16 @@
-// useCountUp: animates the numbers inside a stat string ("50+", "4s → 1.5s")
-// from 0 up to their real value the first time the element is visible.
-// Returns { ref, display } — put ref on the element and render display.
-// Real value always wins at the end; reduced-motion users see it instantly.
 import { useEffect, useRef, useState } from 'react';
 
 const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
 
-// Keeps the original formatting: "4" stays integer, "1.5" keeps one decimal.
 const formatNumber = (number, decimals) =>
   decimals > 0 ? number.toFixed(decimals) : String(Math.round(number));
 
-// Splits "4s → 1.5s" into text + number targets (value and decimal places).
 const parseTargets = (text) =>
   (text.match(/\d+(?:\.\d+)?/g) ?? []).map((token) => ({
     value: Number(token),
     decimals: token.includes('.') ? token.split('.')[1].length : 0,
   }));
 
-// Rebuilds the string with the current (animating) number values.
 const buildText = (text, targets, progress) => {
   let index = 0;
   return text.replace(/\d+(?:\.\d+)?/g, (token) => {

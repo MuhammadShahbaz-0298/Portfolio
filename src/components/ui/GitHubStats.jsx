@@ -1,7 +1,3 @@
-// GitHubStats: live card fed by the free GitHub API (public repos,
-// followers, total stars) — real numbers, always current.
-// Renders nothing if the username is missing or the API is unreachable,
-// so no fake or stale numbers can ever show up.
 import Card from './Card';
 import Reveal from './Reveal';
 import { useGitHubStats } from '../../hooks/useGitHubStats';

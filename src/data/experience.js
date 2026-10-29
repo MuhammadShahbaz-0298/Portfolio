@@ -1,6 +1,3 @@
-// Work experience (timeline) and the stats row above it.
-// To add a job, copy one object in experienceList.
-// To change a stat, edit one object in experienceStats.
 export const experienceStats = [
   { id: 'page-load', value: '4s → 1.5s', label: 'Page load time' },
   { id: 'screens', value: '10+', label: 'Screens shipped' },

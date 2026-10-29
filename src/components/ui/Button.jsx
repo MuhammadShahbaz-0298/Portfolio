@@ -1,9 +1,3 @@
-// Button: the ONE button look — pill shaped, glass or gradient.
-//   <Button href="#projects">View my work</Button>  -> styled link
-//   <Button href="https://...">GitHub</Button>      -> external links open in a new tab
-//   <Button>Send</Button>                           -> styled <button>
-// variants: 'primary' (gradient, glows on hover), 'secondary' (glass),
-//           'ghost' (quiet text link)
 import Icon from './Icon';
 
 const baseClasses =

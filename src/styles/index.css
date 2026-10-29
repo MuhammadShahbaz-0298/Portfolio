@@ -1,57 +1,45 @@
-/*
-  ALL theme colors live here — nothing else hard-codes a color.
-  Design language: modern "glass" developer portfolio (Linear/Vercel style) —
-  deep page color, aurora glows behind the content, frosted glass cards,
-  gradient accent buttons and headlines.
-
-  To change the accent color: edit --accent / --grad-1..2 in :root and .dark.
-*/
 @import "tailwindcss";
 
-/* Dark mode is switched by the .dark class (set in index.html + useTheme). */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ---------- Light theme (default): soft haze ---------- */
 :root {
   color-scheme: light;
-  --page: #f6f7fb; /* page background */
-  --surface: #f0f1f8; /* subtle band (close to --page: no hard stripes) */
-  --card: rgb(255 255 255 / 0.82); /* frosted glass card */
-  --card-top: rgb(255 255 255 / 0.95); /* inner top highlight */
-  --ink: #141428; /* main text */
-  --muted: #4b4d66; /* secondary text (AA on the light page) */
-  --line: rgb(20 20 40 / 0.12); /* glass borders */
-  --accent: #4f46e5; /* indigo accent */
-  --on-accent: #ffffff; /* text on gradient buttons */
-  --accent-soft: rgb(79 70 229 / 0.12); /* washes, rings, dots */
-  --ok: #16a34a; /* "open to work" status dot */
-  --grad-1: #4f46e5; /* gradient start (buttons, headline, rings) */
-  --grad-2: #7c3aed; /* gradient end */
-  --card-shadow: 0 1px 2px rgb(20 20 60 / 0.04), 0 12px 32px rgb(20 20 60 / 0.1);
-  --glow: rgb(99 102 241 / 0.25); /* colored glow used on hover */
+  --page: #faf8f4;
+  --surface: #f3efe8;
+  --card: #ffffff;
+  --card-top: transparent;
+  --ink: #1f1b16;
+  --muted: #655e54;
+  --line: rgb(31 27 22 / 0.13);
+  --accent: #b4491f;
+  --on-accent: #ffffff;
+  --accent-soft: rgb(180 73 31 / 0.1);
+  --ok: #3f7d4e;
+  --grad-1: #b4491f;
+  --grad-2: #c0562a;
+  --card-shadow: 0 1px 2px rgb(31 27 22 / 0.05), 0 4px 14px rgb(31 27 22 / 0.05);
+  --glow: transparent;
 }
 
-/* ---------- Dark theme: near-black glass ---------- */
 .dark {
   color-scheme: dark;
-  --page: #05050a;
-  --surface: #07070f; /* barely-there band: cards float over the page */
-  --card: rgb(255 255 255 / 0.065); /* more presence than 0.04 */
-  --card-top: rgb(255 255 255 / 0.1); /* inner top highlight */
-  --ink: #f2f2fa;
-  --muted: #a3a3c2; /* AA on near-black */
-  --line: rgb(255 255 255 / 0.14); /* visible hairline */
-  --accent: #818cf8;
-  --on-accent: #ffffff;
-  --accent-soft: rgb(129 140 248 / 0.16);
-  --ok: #22c55e;
-  --grad-1: #6366f1;
-  --grad-2: #8b5cf6;
-  --card-shadow: 0 1px 2px rgb(0 0 0 / 0.5), 0 16px 48px rgb(0 0 0 / 0.55);
-  --glow: rgb(129 140 248 / 0.35);
+  --page: #151311;
+  --surface: #1b1815;
+  --card: #1f1c19;
+  --card-top: transparent;
+  --ink: #ece6dc;
+  --muted: #a39a8c;
+  --line: rgb(236 230 220 / 0.12);
+  --accent: #e0815a;
+  --on-accent: #1a0f08;
+  --accent-soft: rgb(224 129 90 / 0.14);
+  --ok: #6fb083;
+  --grad-1: #e0815a;
+  --grad-2: #e9a06f;
+  --card-shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 6px 18px rgb(0 0 0 / 0.3);
+  --glow: transparent;
 }
 
-/* Map the variables to Tailwind utilities (bg-card, text-muted...). */
 @theme inline {
   --color-page: var(--page);
   --color-surface: var(--surface);
@@ -66,82 +54,56 @@
   --shadow-soft: var(--card-shadow);
   --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans",
     ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-script: "Great Vibes", cursive; /* signature style for the name */
+  --font-script: "Great Vibes", cursive;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
     "Liberation Mono", monospace;
 }
 
-/* ---------- Shared looks (the "trendy portfolio" primitives) ---------- */
-
-/* Gradient headline / number text */
 @utility gradient-text {
-  background-image: linear-gradient(120deg, var(--grad-1), var(--grad-2) 55%, #22d3ee);
+  background-image: linear-gradient(120deg, var(--grad-1), var(--grad-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Gradient fill (primary buttons, avatar ring, logo mark) */
 @utility gradient-bg {
   background-image: linear-gradient(135deg, var(--grad-1), var(--grad-2));
 }
 
-/* Colored glow behind hero avatar / on card hover */
 @utility glow {
   box-shadow: 0 0 60px var(--glow);
 }
 
-/* Frosted card surface: glass fill + hairline border + inner top highlight
-   (the highlight is what makes flat cards read as premium glass panels). */
 @utility glass-card {
   background-color: var(--card);
   border: 1px solid var(--line);
-  box-shadow: var(--card-shadow), inset 0 1px 0 var(--card-top);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
 }
 
-/* Mono uppercase micro-label (kickers, dates, captions) */
 @utility label {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.1em;
 }
 
-/* ---------- Aurora: soft glows fixed behind the page ---------- */
 .aurora {
   position: fixed;
   inset: 0;
   z-index: -1;
-  overflow: hidden;
   pointer-events: none;
   background:
-    radial-gradient(50% 40% at 20% 8%, rgb(99 102 241 / 0.1), transparent 70%),
-    radial-gradient(45% 35% at 85% 15%, rgb(139 92 246 / 0.08), transparent 70%),
-    radial-gradient(60% 45% at 50% 100%, rgb(34 211 238 / 0.05), transparent 70%);
-  animation: aurora-drift 24s ease-in-out infinite;
+    radial-gradient(50% 40% at 20% 8%, rgb(180 73 31 / 0.05), transparent 70%),
+    radial-gradient(60% 45% at 50% 100%, rgb(192 86 42 / 0.04), transparent 70%);
 }
 
 .dark .aurora {
   background:
-    radial-gradient(50% 40% at 20% 8%, rgb(99 102 241 / 0.28), transparent 70%),
-    radial-gradient(45% 35% at 85% 15%, rgb(139 92 246 / 0.22), transparent 70%),
-    radial-gradient(60% 45% at 50% 100%, rgb(34 211 238 / 0.12), transparent 70%);
+    radial-gradient(50% 40% at 20% 8%, rgb(224 129 90 / 0.08), transparent 70%),
+    radial-gradient(60% 45% at 50% 100%, rgb(233 160 111 / 0.05), transparent 70%);
 }
 
-@keyframes aurora-drift {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-28px);
-  }
-}
-
-/* ---------- Skills marquee (paused on hover) ---------- */
 .marquee-track {
   display: flex;
   width: max-content;
@@ -164,7 +126,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* keep anchored sections clear of the floating navbar */
     scroll-padding-top: 6.5rem;
   }
 
@@ -180,22 +141,18 @@
     color: var(--on-accent);
   }
 
-  /* Visible keyboard focus everywhere */
   :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 }
 
-/* ---------- Fade-in on scroll (used by the Reveal component) ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(0.75rem);
   transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
 }
 
-/* Entrance variants (Reveal variant="left" | "right" | "scale" | "blur").
-   All converge to .reveal.is-visible (transform/filter none). */
 .reveal-left {
   transform: translateX(-1.5rem);
 }
@@ -219,36 +176,14 @@
   filter: none;
 }
 
-/* ---------- Shimmering gradient headline (hero h1) ---------- */
 @utility gradient-pan {
-  background-size: 200% 100%;
-  animation: gradient-pan 7s ease-in-out infinite alternate;
+  background-size: 100% 100%;
 }
 
-@keyframes gradient-pan {
-  from {
-    background-position: 0% 50%;
-  }
-  to {
-    background-position: 100% 50%;
-  }
-}
-
-/* ---------- Soft floating (hero avatar) ---------- */
 @utility float-soft {
-  animation: float-soft 4.5s ease-in-out infinite alternate;
+  transform: none;
 }
 
-@keyframes float-soft {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
-
-/* ---------- Back-to-top: hidden until scrolled past the hero ---------- */
 .back-to-top {
   opacity: 0;
   transform: translateY(0.5rem) scale(0.9);
@@ -263,7 +198,6 @@
   pointer-events: auto;
 }
 
-/* Respect users who prefer no motion: show everything, instantly. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -276,7 +210,6 @@
     transition: none;
   }
 
-  .aurora,
   .marquee-track {
     animation: none;
   }
