@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:gap-14">
+          <div className="flex flex-row items-center gap-8 sm:items-start sm:gap-14">
             <nav aria-label="Footer navigation">
               <p className="text-sm font-semibold uppercase tracking-widest text-muted">Pages</p>
               <ul className="mt-3 space-y-2">
