@@ -97,8 +97,8 @@
   background-color: var(--card);
   border: 1px solid var(--line);
   box-shadow: var(--card-shadow), inset 0 1px 0 var(--card-top);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 /* Mono uppercase micro-label (kickers, dates, captions) */
